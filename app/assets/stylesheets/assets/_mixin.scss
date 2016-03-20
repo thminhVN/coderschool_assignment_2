@@ -1,0 +1,31 @@
+@mixin transition ($attribute,
+$time) {
+    -webkit-transition: $attribute$time;
+    -moz-transition: $attribute$time;
+    -ms-transition: $attribute$time;
+    transition: $attribute$time;
+}
+@mixin border-radius ($width) {
+    -webkit-border-radius: $width;
+    -moz-border-radius: $width;
+    -ms-border-radius: $width;
+    -o-border-radius: $width;
+    border-radius: $width;
+}
+@mixin gradient ($direction,
+$begin,
+$end) {
+    background: -webkit-linear-gradient($direction, $begin, $end);
+    background: -o-linear-gradient($direction, $begin, $end);
+    background: -moz-linear-gradient($direction, $begin, $end);
+    background: linear-gradient($direction, $begin, $end);
+}
+@mixin box-shadow($x,
+$y,
+$color) {
+    box-shadow: $x $y 0 $color;
+    -webkit-box-shadow: $x $y 0 $color;
+    -moz-box-shadow: $x $y 0 $color;
+    -ms-box-shadow: $x $y 0 $color;
+    -o-box-shadow: $x $y 0 $color;
+}

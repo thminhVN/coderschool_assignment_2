@@ -1,0 +1,175 @@
+$positions : left, right, top, bottom;
+@for $i from -4 through 20 {
+    .pd-all-xs-#{$i}{
+       padding: $i * 5px;
+    }
+    .mg-all-xs-#{$i}{
+       margin: $i * 5px;
+    }
+    .pd-h-xs-#{$i}{
+       padding-left: $i * 5px;
+       padding-right: $i * 5px;
+    }
+    .mg-h-xs-#{$i}{
+       margin-left: $i * 5px;
+       margin-right: $i * 5px;
+    }
+    .pd-v-xs-#{$i}{
+       padding-top: $i * 5px;
+       padding-bottom: $i * 5px;
+    }
+    .mg-v-xs-#{$i}{
+       margin-top: $i * 5px;
+       margin-bottom: $i * 5px;
+    }
+    @each $position in $positions {
+        .pd-#{$position}-xs-#{$i}{
+           padding-#{$position}: $i * 5px;
+        }
+        .mg-#{$position}-xs-#{$i}{
+           margin-#{$position}: $i * 5px;
+        }
+    
+    }
+    @each $position in $positions {
+        .pd-#{$position}-xs-#{$i}{
+           padding-#{$position}: $i * 5px;
+        }
+        .mg-#{$position}-xs-#{$i}{
+           margin-#{$position}: $i * 5px;
+        }
+    
+    }
+}
+@media screen and (min-width: $width-xs){
+    @for $i from 0 through 20 {
+        .pd-all-sm-#{$i}{
+           padding: $i * 5px;
+        }
+        .mg-all-sm-#{$i}{
+           margin: $i * 5px;
+        }
+        .pd-h-sm-#{$i}{
+           padding-left: $i * 5px;
+           padding-right: $i * 5px;
+        }
+        .mg-h-sm-#{$i}{
+           margin-left: $i * 5px;
+           margin-right: $i * 5px;
+        }
+        .pd-v-sm-#{$i}{
+           padding-top: $i * 5px;
+           padding-bottom: $i * 5px;
+        }
+        .mg-v-sm-#{$i}{
+           margin-top: $i * 5px;
+           margin-bottom: $i * 5px;
+        }
+        @each $position in $positions {
+            .pd-#{$position}-sm-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-sm-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+        @each $position in $positions {
+            .pd-#{$position}-sm-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-sm-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+    }
+}
+@media screen and (min-width: $width-md){
+    @for $i from 0 through 20 {
+        .pd-all-md-#{$i}{
+           padding: $i * 5px;
+        }
+        .mg-all-md-#{$i}{
+           margin: $i * 5px;
+        }
+        .pd-h-md-#{$i}{
+           padding-left: $i * 5px;
+           padding-right: $i * 5px;
+        }
+        .mg-h-md-#{$i}{
+           margin-left: $i * 5px;
+           margin-right: $i * 5px;
+        }
+        .pd-v-md-#{$i}{
+           padding-top: $i * 5px;
+           padding-bottom: $i * 5px;
+        }
+        .mg-v-md-#{$i}{
+           margin-top: $i * 5px;
+           margin-bottom: $i * 5px;
+        }
+        @each $position in $positions {
+            .pd-#{$position}-md-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-md-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+        @each $position in $positions {
+            .pd-#{$position}-md-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-md-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+    }
+}
+@media screen and (min-width: $width-lg){
+    @for $i from 0 through 20 {
+        .pd-all-lg-#{$i}{
+           padding: $i * 5px;
+        }
+        .mg-all-lg-#{$i}{
+           margin: $i * 5px;
+        }
+        .pd-h-lg-#{$i}{
+           padding-left: $i * 5px;
+           padding-right: $i * 5px;
+        }
+        .mg-h-lg-#{$i}{
+           margin-left: $i * 5px;
+           margin-right: $i * 5px;
+        }
+        .pd-v-lg-#{$i}{
+           padding-top: $i * 5px;
+           padding-bottom: $i * 5px;
+        }
+        .mg-v-lg-#{$i}{
+           margin-top: $i * 5px;
+           margin-bottom: $i * 5px;
+        }
+        @each $position in $positions {
+            .pd-#{$position}-lg-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-lg-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+        @each $position in $positions {
+            .pd-#{$position}-lg-#{$i}{
+               padding-#{$position}: $i * 5px;
+            }
+            .mg-#{$position}-lg-#{$i}{
+               margin-#{$position}: $i * 5px;
+            }
+        
+        }
+    }
+}
