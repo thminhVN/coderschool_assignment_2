@@ -1,24 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Sender:</strong>
-  <%= @message.sender %>
-</p>
-
-<p>
-  <strong>Receiver:</strong>
-  <%= @message.receiver %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @message.message %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @message.status %>
-</p>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<div class="container">
+	<% if @message %>
+	<div class="page-header">
+		<h1>Message from <%= @message.sender.name %></h1>
+		<p class="text-mute">at <%= @message.created_at.strftime("%Y, %B-%d %H:%M:%S")%></p>
+	</div>
+	<div class="message"><%= @message.message %></div>
+	<p><%= link_to 'Back', root_path, :class => 'btn btn-primary'%></p>
+	<% end %>
+</div>

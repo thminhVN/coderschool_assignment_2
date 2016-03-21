@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'login' => 'users#login'
   get 'logout' => 'users#logout'
   post "add-friend" => 'home#add_friend'
+  get 'sent' => 'messages#sent'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="page-header">
+		<h1>Your sent messages</h1>
+	</div>
+	<% if @messages != nil %>
+	<ul class="timeline">
+		<% @messages.each.with_index do |message, key| %>
+		<li class="<%= key % 2 != 0 ? 'timeline-inverted' : '' %>">
+			<div class="timeline-badge"><i class="<%= message.status == 0 ? 'fa fa-folder' : 'fa fa-folder-open' %>"></i></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4 class="timeline-title">
+					<%= message.status == 0 ? 'Unread message' : 'Read at ' +  message.read_at.strftime("%Y, %B-%d %H:%M:%S")%>
+					</h4>
+					<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> at <%= message.created_at.strftime("%Y, %B-%d %H:%M:%S")%> to <%= message.receiver.name%></small></p>
+				</div>
+				<div class="timeline-body">
+				</div>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+</div>

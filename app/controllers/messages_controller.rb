@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
@@ -10,6 +10,24 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    @message = Message.find(params[:id])
+    if @message
+        if @message.receiver == current_user
+          if @message.status == 0
+              @message.update(status: 1, read_at: Time.now.getutc)
+              @message.save
+          else
+            flash[:error] = 'You already read this message'
+            @message = nil
+          end 
+        else
+          flash[:error] = 'This isn\'t your message'
+          @message = nil
+        end 
+    else
+      flash[:error] = 'Can\'t not find this message'
+      @message = nil
+    end
   end
 
   # GET /messages/new
@@ -31,7 +49,7 @@ class MessagesController < ApplicationController
       end
     end
 
-    if !@friends
+    if @friends.count == 0
       flash[:error] = 'You don\'t have friends. Please add friend first'
       redirect_to root_path
     end
@@ -78,6 +96,10 @@ class MessagesController < ApplicationController
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def sent
+    @messages = Message.where sender_id: current_user.id
   end
 
   private

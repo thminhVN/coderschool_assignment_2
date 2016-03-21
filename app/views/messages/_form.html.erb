@@ -1,5 +1,4 @@
 <%= simple_form_for(@message) do |f| %>
-<%= f.error_notification %>
 <div class="form-group">
   <%= f.label :receiver, 'Receiver' %>
   <%= f.select :receiver, options_for_select(@friends.collect {|s|[s[:name], s[:id]]}, @message.receiver), {}, {:class => 'form-control'} %>
