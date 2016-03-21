@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     if @user
       if @user.authenticate(params[:login_password])
         session[:user_id] = @user.id
-        flash[:success] = "Login successfully"
         redirect_to root_path
       else
         flash[:error] = "Email or password wrong"

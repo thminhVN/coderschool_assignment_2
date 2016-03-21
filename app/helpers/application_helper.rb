@@ -14,4 +14,13 @@ module ApplicationHelper
 		end
 		nil
 	end
+
+	def is_read(message_id)
+		@read_message = Message.find(message_id)
+		if @read_message
+			@read_message.status == 1
+		end
+		false
+	end
+
 end
