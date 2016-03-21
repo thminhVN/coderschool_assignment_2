@@ -2,9 +2,9 @@ class HomeController < ApplicationController
 	def index
 		if !current_user
 			redirect_to register_path
+		else
+			@received_messages = Message.where receiver_id: current_user.id
 		end
-		@received_messages = Message.where receiver_id: current_user.id
-		logger.debug @received_messages
 	end
 
 	def add_friend

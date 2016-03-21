@@ -4,9 +4,9 @@
 
 Submitted by: **Minh Tran**
 
-Time spent: **X** hours
+Time spent: 12 hours
 
-URL: **Insert your Heroku URL here**
+URL: http://coderschool-assignment-2.herokuapp.com/
 
 ## User Stories
 
