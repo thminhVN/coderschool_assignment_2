@@ -1,3 +1,10 @@
 <div id="home">
-	
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Welcome, <%= current_user.name%></h1>
+			<a href="<%= new_message_path %>" class="btn btn-primary btn-lg"><i class="fa fa-send"></i> New message</a>
+			<a href="<%= users_path %>" class="btn btn-success btn-lg"><i class="fa fa-users"></i> Add friends</a>
+			<a href="#" class="btn btn-warning btn-lg"><i class="fa fa-envelope"></i> Sent messages</a>
+		</div>
+	</div>
 </div>

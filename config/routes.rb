@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :messages
   root 'home#index'
   resources :users
   get 'register' => 'users#new'
-  get 'login' => 'users#login'
+  post 'login' => 'users#login'
+  get 'logout' => 'users#logout'
+  post "add-friend" => 'home#add_friend'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

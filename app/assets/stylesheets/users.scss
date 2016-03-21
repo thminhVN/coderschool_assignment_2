@@ -1,9 +1,10 @@
-body.home-register{
+body.users-new{
 	height: 100%;
 	background: image-url('bg-signup.jpg') no-repeat center center transparent;
 	background-size: cover;
 }
 #register{
-	padding-top: 30px;
-	padding-bottm: 30px;
+	.bg-white{
+		padding-bottom: 30px;
+	}
 }

@@ -1,0 +1,16 @@
+<%= simple_form_for(@message) do |f| %>
+<%= f.error_notification %>
+<div class="form-group">
+  <%= f.label :receiver, 'Receiver' %>
+  <%= f.select :receiver, options_for_select(@friends.collect {|s|[s[:name], s[:id]]}, @message.receiver), {}, {:class => 'form-control'} %>
+  <%= f.error :receiver, class: 'text-danger' %>
+</div>
+<div class="form-group">
+  <%= f.label :message %>
+  <%= f.text_area :message, :class => 'form-control' %>
+  <%= f.error :message, class: 'text-danger' %>
+</div>
+<div class="form-group">
+  <button class="btn btn-success btn-lg"><i class="fa fa-send"></i> Send</button>
+</div>
+<% end %>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.where("id != " + session[:user_id].to_s)
   end
 
   # GET /users/1
@@ -21,7 +21,29 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # POST /users
   def login
+    @user = User.find_by_email(params[:login_email])
+    if @user
+      if @user.authenticate(params[:login_password])
+        session[:user_id] = @user.id
+        flash[:success] = "Login successfully"
+        redirect_to root_path
+      else
+        flash[:error] = "Email or password wrong"
+        logger.debug "Wrong password"
+        redirect_to register_path
+      end
+    else
+      logger.debug "Can't find user"
+      flash[:error] = "Email or password wrong"
+      redirect_to register_path
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   # POST /users
@@ -75,4 +97,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def login_params
+      params.require(:login).permit(:email, :password)
+    end
+
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_from_id: 
+  request_to_id: 
+  status: 1
+
+two:
+  request_from_id: 
+  request_to_id: 
+  status: 1
